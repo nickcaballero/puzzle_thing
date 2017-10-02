@@ -7,7 +7,7 @@ public class LinkedList {
 	
 	public LinkedList() {
 		node1 = new Node();
-		size = 0;
+		size = 1;
 	}
 	
 	public void setSize(int s) {
@@ -38,7 +38,7 @@ public class LinkedList {
 	}
 	
 	
-	public Node addLayer(int maxStep) {
+	public Node addLayer() {
 		Node thisNode=this.node1;
 		if (thisNode.getData() > max)
 			return thisNode;
