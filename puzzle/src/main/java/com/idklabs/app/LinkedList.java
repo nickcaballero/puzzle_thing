@@ -1,29 +1,13 @@
+package com.idklabs.app;
+
 public class LinkedList {
 	Node node1;
 	int size;
+	int max = 7;
 	
 	public LinkedList() {
 		node1 = new Node();
 		size = 0;
-	}
-	
-	// Test code - main function
-	public static void main(String[] args) {
-		LinkedList example = new LinkedList();
-		System.out.println(example.getSize());
-		example.add(1);
-		System.out.println(example.getSize());
-		example.add(2);
-		example.add(3);
-		example.add(4);
-		example.add(5);
-		example.add(6);
-		example.add(7);
-		System.out.println(example.addLayer(8));
-		System.out.println(example.find(4).getData());
-		example.remove(5);
-		System.out.println(example.getSize());
-		System.out.println(example.find(5));
 	}
 	
 	public void setSize(int s) {
@@ -44,27 +28,22 @@ public class LinkedList {
 	public Node addright(int dataright) {
 		Node newNode = new Node(dataright, node1);
 		this.node1 = newNode;
-	 for (int dataright = 1; int i <= 4; i++)
-            System.out.println("Value of Node %: " );
 		return newNode;
 	}
 	
 	public Node addbottom(int databottom) {
 		Node newNode = new Node(databottom, node1);
 		this.node1 = newNode;
-		 for (int dataright = 1; int i <= 4; i++)
-            System.out.println("Value of Node %: " );
 		return newNode;
 	}
 	
 	
 	public Node addLayer(int maxStep) {
 		Node thisNode=this.node1;
-		max=7;
 		if (thisNode.getData() > max)
 			return thisNode;
-			thisNode = thisNode.getNextNode();
-		
+			
+		thisNode = thisNode.getNextNode();
 		return null;
 	}
 	
@@ -99,7 +78,7 @@ public class LinkedList {
 	}
 	
 	// Node class
-	private class Node {
+	public static class Node {
 		private Node nextNode;
 		private Node allNodes;
 		private int data;
@@ -133,7 +112,7 @@ public class LinkedList {
 			this.data = max;
 		}
 		
-		private int getMaxData() {
+		public int getMaxData() {
 			return this.data;
 		}
 		
@@ -141,7 +120,7 @@ public class LinkedList {
 			this.data = value;
 		}
 		
-		private int getData() {
+		public int getData() {
 			return this.data;
 		}
 		
